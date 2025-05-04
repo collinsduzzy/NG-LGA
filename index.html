@@ -3,58 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- MaterializeCSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <title>NG-LGA</title>
 </head>
 <body>
-  <h1>NG-LGA</h1>
-  <p>Autofill your Local Government Area input field when a state is selected. Nigerian states only.</p>
-  <form action="">
-    <div>
-      <label for="state">Select State:</label>
-      <select id="state" name="state" required>
-        <option value="" disabled selected>Select a state</option>
-        <option value="Abia">Abia</option>
-        <option value="Adamawa">Adamawa</option>
-        <option value="Akwa Ibom">Akwa Ibom</option>
-        <option value="Anambra">Anambra</option>
-        <option value="Bauchi">Bauchi</option>
-        <option value="Bayelsa">Bayelsa</option>
-        <option value="Benue">Benue</option>
-        <option value="Borno">Borno</option>
-        <option value="Cross River">Cross River</option>
-        <option value="Delta">Delta</option>
-        <option value="Ebonyi">Ebonyi</option>
-        <option value="Edo">Edo</option>
-        <option value="Ekiti">Ekiti</option>
-        <option value="Enugu">Enugu</option>
-        <option value="Gombe">Gombe</option>
-        <option value="Imo">Imo</option>
-        <option value="Jigawa">Jigawa</option>
-        <option value="Kaduna">Kaduna</option>
-        <option value="Kano">Kano</option>
-        <option value="Kogi">Kogi</option>
-        <option value="Kwara">Kwara</option>
-        <option value="Lagos">Lagos</option>
-        <option value="Nasarawa">Nasarawa</option>
-        <option value="Niger">Niger</option>
-        <option value="Ogun">Ogun</option>
-        <option value="Ondo">Ondo</option>
-        <option value="Osun">Osun</option>
-        <option value="Oyo">Oyo</option>
-        <option value="Plateau">Plateau</option>
-        <option value="Rivers">Rivers</option>
-        <option value="Sokoto">Sokoto</option>
-        <option value="Taraba">Taraba</option>
-        <option value="Yobe">Yobe</option>
-        <option value="Zamfara">Zamfara</option>
-      </select>
-    </div>
-    <br>
-    <div>
-      <label for="lga">Local Government Area:</label>
-      <select name="lga" id="lga">
-        <option value="" disabled selected>Select a Local Government Area</option>
-      </select>
-  </form>
+  <div class="container section center-align">
+    <h1>NG-LGA</h1>
+    <p>Autofill your Local Government Area input field when a state is selected. Nigerian states only.</p>
+    <form action="">
+        <div class="row">
+          <div class="col l4 offset-l2 m6 s12 input-field">
+            <select id="stateOfOrigin" onchange="toggleLGA(this)" name="state_of_origin" required>
+                <option value="" disabled selected> State of Origin</option>
+                <option value="Abia">Abia</option>
+                <option value="Adamawa">Adamawa</option>
+                <option value="Akwa Ibom">Akwa Ibom</option>
+                <option value="Anambra">Anambra</option>
+                <option value="Bauchi">Bauchi</option>
+                <option value="Bayelsa">Bayelsa</option>
+                <option value="Benue">Benue</option>
+                <option value="Borno">Borno</option>
+                <option value="Cross River">Cross River</option>
+                <option value="Delta">Delta</option>
+                <option value="Ebonyi">Ebonyi</option>
+                <option value="Edo">Edo</option>
+                <option value="Ekiti">Ekiti</option>
+                <option value="Enugu">Enugu</option>
+                <option value="FCT - Abuja">FCT - Abuja</option>
+                <option value="Gombe">Gombe</option>
+                <option value="Imo">Imo</option>
+                <option value="Jigawa">Jigawa</option>
+                <option value="Kaduna">Kaduna</option>
+                <option value="Kano">Kano</option>
+                <option value="Katsina">Katsina</option>
+                <option value="Kebbi">Kebbi</option>
+                <option value="Kogi">Kogi</option>
+                <option value="Kwara">Kwara</option>
+                <option value="Lagos">Lagos</option>
+                <option value="Nasarawa">Nasarawa</option>
+                <option value="Niger">Niger</option>
+                <option value="Ogun">Ogun</option>
+                <option value="Ondo">Ondo</option>
+                <option value="Osun">Osun</option>
+                <option value="Oyo">Oyo</option>
+                <option value="Plateau">Plateau</option>
+                <option value="Rivers">Rivers</option>
+                <option value="Sokoto">Sokoto</option>
+                <option value="Taraba">Taraba</option>
+                <option value="Yobe">Yobe</option>
+                <option value="Zamfara">Zamfara</option>
+            </select>
+          </div>
+          <div class="col l4 m6 s12 input-field">
+            <select id="lga" class="select-lga" name="lga_of_origin" required></select>
+          </div>
+        </div>
+        <div class="center-align">
+          <a href="https://github.com/coresystechng" class="btn btn-large btn-flat teal darken-4 white-text">SUBMIT</a>
+        </div>
+    </form>
+  </div>
+
+
+  <!-- JQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- MaterializeCSS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('select').formSelect();
+    });
+  </script>
 </body>
 </html>
